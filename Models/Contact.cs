@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Contacts.Models
 {
@@ -48,6 +49,22 @@ namespace Contacts.Models
     public void SetId(int id)
     {
       _id = id;
+    }
+    public static Contact Find(int id)
+    {
+      return _contacts[id - 1];
+    }
+    public static void ClearContacts()
+    {
+      _contacts.Clear();
+    }
+    public static void RemoveContact(int id)
+    {
+      _contacts.RemoveAt(id - 1);
+      for(int index = id - 1; index < _contacts.Count; index++)
+      {
+        _contacts[index].SetId(index + 1);
+      }
     }
   }
 }

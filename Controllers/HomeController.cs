@@ -26,5 +26,26 @@ namespace Contacts.Contollers
       Contact newContact = new Contact(Request.Form["first-name"], Request.Form["last-name"], Request.Form["phone-number"], Request.Form["address"]);
       return View(newContact);
     }
+
+    [HttpGet("/contact/{id}")]
+    public ActionResult ContactDetails(int id)
+    {
+      Contact contactDetails = Contact.Find(id);
+      return View(contactDetails);
+    }
+
+    [HttpPost("/contacts/clear")]
+    public ActionResult ClearContacts()
+    {
+      Contact.ClearContacts();
+      return View();
+    }
+
+    [HttpPost("/contact/{id}/removed")]
+    public ActionResult RemoveContact(int id)
+    {
+      Contact.RemoveContact(id);
+      return View();
+    }
   }
 }
