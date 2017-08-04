@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Contact Book</title>
-  </head>
-  <body>
-    <h1>Your Contacts</h1>
-    <h3>You have @Model.Count contacts.</h3>
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+
+  <h1>Your Contacts</h1>
+  <h3>You have @Model.Count contact(s).</h3>
+  <ul>
     @foreach(var contact in Model)
     {
-      @(contact.GetFirstName() + contact.GetLastName());
+      <li><a href="/conact/@contact.GetId()">@(contact.GetFirstName() + " " + contact.GetLastName())</a></li>
     }
-
-    <p><a href="/contact/form">Add Contact</a><p>
-  </body>
-</html>
+  </ul>
+  <br>
+  <br>
+  <p><a href="/contact/form">Add Contact</a></p>
+</div>
