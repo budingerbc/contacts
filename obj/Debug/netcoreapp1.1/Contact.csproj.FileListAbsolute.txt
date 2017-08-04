@@ -1,0 +1,8 @@
+C:\Users\Ben\Epicodus\contacts\bin\Debug\netcoreapp1.1\Contact.deps.json
+C:\Users\Ben\Epicodus\contacts\bin\Debug\netcoreapp1.1\Contact.runtimeconfig.json
+C:\Users\Ben\Epicodus\contacts\bin\Debug\netcoreapp1.1\Contact.runtimeconfig.dev.json
+C:\Users\Ben\Epicodus\contacts\bin\Debug\netcoreapp1.1\Contact.dll
+C:\Users\Ben\Epicodus\contacts\bin\Debug\netcoreapp1.1\Contact.pdb
+C:\Users\Ben\Epicodus\contacts\obj\Debug\netcoreapp1.1\Contact.AssemblyInfo.cs
+C:\Users\Ben\Epicodus\contacts\obj\Debug\netcoreapp1.1\Contact.dll
+C:\Users\Ben\Epicodus\contacts\obj\Debug\netcoreapp1.1\Contact.pdb

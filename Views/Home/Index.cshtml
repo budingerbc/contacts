@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Book</title>
+  </head>
+  <body>
+    <h1>Your Contacts</h1>
+    <h3>You have @Model.Count contacts.</h3>
+    @foreach(var contact in Model)
+    {
+      @(contact.GetFirstName() + contact.GetLastName());
+    }
+
+    <p><a href="/contact/form">Add Contact</a><p>
+  </body>
+</html>
