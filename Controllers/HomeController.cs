@@ -7,9 +7,11 @@ namespace Contacts.Contollers
 {
   public class HomeController : Controller
   {
+    // Home page
     [HttpGet("/")]
     public ActionResult Index()
     {
+      // Passing the list of all contacts to the view in order to display all contacts
       List<Contact> contacts = Contact.GetAll();
       return View(contacts);
     }
@@ -20,6 +22,7 @@ namespace Contacts.Contollers
       return View();
     }
 
+    // Pulls the data from the new contact form and creates a new contact.  The contact is added to the static list of contacts in the Model constructor
     [HttpPost("/contact/new")]
     public ActionResult NewContact()
     {
@@ -27,6 +30,7 @@ namespace Contacts.Contollers
       return View(newContact);
     }
 
+    // Shows the contact's details based on its id
     [HttpGet("/contact/{id}")]
     public ActionResult ContactDetails(int id)
     {
@@ -34,6 +38,7 @@ namespace Contacts.Contollers
       return View(contactDetails);
     }
 
+    // Clears all contacts in the list
     [HttpPost("/contacts/clear")]
     public ActionResult ClearContacts()
     {
@@ -41,6 +46,7 @@ namespace Contacts.Contollers
       return View();
     }
 
+    // Removes a single contact from the list
     [HttpPost("/contact/{id}/removed")]
     public ActionResult RemoveContact(int id)
     {

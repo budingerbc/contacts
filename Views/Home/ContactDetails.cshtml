@@ -3,14 +3,16 @@
 }
 <div class="container">
 
+  @* Displays contact details when selecting from the list of contacts on the home/index page *@
   <h3>@(Model.GetFirstName() + " " + Model.GetLastName())</h3>
   <ul>
     <li>Phone: @Model.GetPhoneNumber()</li>
     <li>Address: @Model.GetAddress()</li>
   </ul>
 
-  <p><a href="/">Home</a></p>
+
   <form action="/contact/@Model.GetId()/removed" method="post">
+    <a href="/"><button type="button" class="btn-success">Home</button></a>
     <button type="submit" class="btn-danger">Remove Contact</button>
   </form>
 </div>

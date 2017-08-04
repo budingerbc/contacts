@@ -3,6 +3,7 @@
 }
 <div class="container">
 
+  @* Displays a newly created contact and its details *@
   <h1>You created a new contact!</h1>
 
   <h3>@(Model.GetFirstName() + " " + Model.GetLastName())</h3>
@@ -11,5 +12,5 @@
     <li>Address: @Model.GetAddress()</li>
   </ul>
 
-  <p><a href="/">Home</a></p>
+  <a href="/"><button type="button" class="btn-success">Home</button></a>
 </div>

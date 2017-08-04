@@ -22,6 +22,7 @@ namespace Contacts.Models
       _id = _contacts.Count;
     }
 
+    // Mostly created accessors for returning instance properties since contact data is not being modified
     public string GetFirstName()
     {
       return _firstName;
@@ -46,6 +47,7 @@ namespace Contacts.Models
     {
       return _contacts;
     }
+    // Mutator for assistance with removing single contacts, as the ID has to be updated when removing from the static list of contacts
     public void SetId(int id)
     {
       _id = id;
@@ -54,13 +56,17 @@ namespace Contacts.Models
     {
       return _contacts[id - 1];
     }
+    // Clears all contacts out of the static list using a List method
     public static void ClearContacts()
     {
       _contacts.Clear();
     }
+    // Removes a single contact from the list and updates all subsequent contact id fields
     public static void RemoveContact(int id)
     {
+      // Accounting for the fact that the index and id of the contact are offset by 1
       _contacts.RemoveAt(id - 1);
+      // Loops through the rest of the list and updates the id on each contact
       for(int index = id - 1; index < _contacts.Count; index++)
       {
         _contacts[index].SetId(index + 1);
